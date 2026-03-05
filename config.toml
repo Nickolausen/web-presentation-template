@@ -14,6 +14,10 @@ canonifyURLs = true
 # uncomment for browsing at file:///
 # uglyURLs = true
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [author]
 name = "Nicholas Magi"
 
