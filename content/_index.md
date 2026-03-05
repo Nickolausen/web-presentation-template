@@ -13,6 +13,7 @@ aliases = [
 {{% today %}}
 # Short guide to Markdown slides
 ## This has much potential
+Next page
 
 ---
 
