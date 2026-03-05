@@ -5,9 +5,9 @@
 {{ $id := delimit (shuffle (split (md5 $seed) "" )) "" }}
 
 <div style="">
-<div style="width: {{ $w }}%;height: {{ $h }}px; display: block;">
-    <canvas id="{{ $id }}"></canvas>
-</div>
+    <div style="width: {{ $w }}%;height: {{ $h }}px; display: block;">
+        <canvas id="{{ $id }}"></canvas>
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/Chart.min.js"></script>
 <script type="text/javascript">

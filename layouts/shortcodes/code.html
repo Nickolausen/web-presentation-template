@@ -18,7 +18,7 @@
         )
     ) }}
 
-```{{- $language }}
+```{{- $language }} { linenos=inline }
 {{- range $index, $element := $content }}
 {{ $element | safeHTML }}
 {{- end -}}{{- "\n" -}}

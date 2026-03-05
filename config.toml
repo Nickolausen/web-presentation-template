@@ -1,4 +1,3 @@
-baseURL = "https://danysk.github.io/Template-Hugo-Reveal-Slides"
 languageCode = "en-us"
 title = "A Hugo theme for creating Reveal.js presentations"
 disableKinds = ["sitemap", "RSS"]
@@ -10,7 +9,7 @@ publishDir = "build"
 # uglyURLs = true
 
 [author]
-name = "Danilo Pianini"
+name = "Nicholas Magi"
 
 # currently only the unsafe mode for goldmark is supported
 [markup.goldmark.renderer]
@@ -21,7 +20,14 @@ unsafe = true
 [markup.highlight]
 #codeFences = false  # use highlight.js
 codeFences = true  # use hugo highlighting at compile time
-style = "tango"  # set a style for hugo highlighting
+style = "base16-snazzy"  # set a style for hugo highlighting
+# Code styles for Hugo: https://gohugo.io/quick-reference/syntax-highlighting-styles/ 
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
 
 [outputFormats.Reveal]
 baseName = "index"
@@ -30,8 +36,6 @@ isHTML = true
 
 [params.reveal_hugo]
 history = true
-theme = "league"
-highlight_theme = "solarized-dark"
 slide_number = true
 transition = "slide"
 transition_speed = "fast"
@@ -45,27 +49,14 @@ targetPath = "css/custom-theme.css"
 enableSourceMap = true
 
 [[params.reveal_hugo.mermaid]]
-# startOnLoad = false
-# theme = "default"
-# fontFamily = "Inconsolata"
-# useMaxWidth = false
+startOnLoad = true
+theme = "default"
+fontFamily = "Inconsolata"
+useMaxWidth = true
 
 # gitGraph options break the image generation
 # [params.reveal_hugo.mermaid.gitGraph]
 # mainBranchName = 'master'
 # rotateCommitLabel = true
-
-[security]
-  enableInlineShortcodes = false
-  [security.exec]
-    allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^npx$', '^postcss$']
-    osEnv = ['(?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+|(XDG_CONFIG_)?HOME|USERPROFILE|SSH_AUTH_SOCK|DISPLAY|LANG)$']
-  [security.funcs]
-    getenv = ['^HUGO_', '^CI$', 'GITHUB_TOKEN' ]
-  [security.goTemplates]
-    allowActionJSTmpl = false
-  [security.http]
-    methods = ['(?i)GET|POST']
-    urls = ['.*']
 
 
