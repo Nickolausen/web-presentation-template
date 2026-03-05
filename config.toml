@@ -12,7 +12,6 @@ relativeURLs = true
 canonifyURLs = true
 
 # uncomment for browsing at file:///
-# relativeURLs = true
 # uglyURLs = true
 
 [author]
