@@ -3,6 +3,13 @@ title = "A Hugo theme for creating Reveal.js presentations"
 disableKinds = ["sitemap", "RSS"]
 theme = "reveal-hugo"
 publishDir = "build"
+# TODO: Insert repo name below here!
+baseURL = "https://nickolausen.github.io/<repo-name>/"
+# Example: baseURL = "https://nickolausen.github.io/web-presentation-template/"
+
+# This forces Hugo to make all links relative to the current page
+relativeURLs = true
+canonifyURLs = true
 
 # uncomment for browsing at file:///
 # relativeURLs = true
