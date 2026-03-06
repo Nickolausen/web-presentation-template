@@ -4,7 +4,7 @@ Write nice presentations using only Markdown. Check out the [published example](
 
 ## How to run slides
 
-### Linux
+### Linux / MacOSX
 
 ```bash
 hugo serve
