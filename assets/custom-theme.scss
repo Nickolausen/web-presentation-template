@@ -35,10 +35,6 @@ $accentClr: #760000;
 $codeClr: rgb(144, 209, 21);
 $headingColor: #222;
 
-// Text selection
-$selectionBackgroundColor: #FF5E99;
-$selectionColor: #fff;
-
 // Colors used for UI elements that are overlaid on top of
 // the presentation
 $overlayElementBgColor: 240, 240, 240;
@@ -65,7 +61,7 @@ $overlayElementFgColor: 0, 0, 0;
 }
 
 // Text selection
-$selectionBackgroundColor: lighten( $mainColor, 10% );
+$selectionBackgroundColor: #{$accentClr}77;
 $selectionColor: lighten( $backgroundColor, 10% );
 
 // Vertical spacing between blocks of text
@@ -142,7 +138,7 @@ $linkColorHover: lighten($linkColor, 20%);
 }
 
 .reveal .slide-background:after {
-	content: "Authors - Title - Venue Year";
+	content: "Author - Title - Venue Year";
 	position: absolute;
 	bottom: 2.5%;
 	right: 7%;
@@ -180,4 +176,5 @@ $linkColorHover: lighten($linkColor, 20%);
 .reveal .code-wrapper {
 	border-radius: 10px;
 	padding: 7px;
+	box-shadow: 2.5px 2.5px 10px $mainColor;
 }
