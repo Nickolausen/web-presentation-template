@@ -227,11 +227,11 @@ $$\frac{n!}{k!(n-k)!} = \binom{n}{k}$$
 # Code snippets
 
 
-```kotlin
+```kotlin { linenos=inline }
 val x = pippo
 ```
 
-```go
+```go { linenos=inline, hl_lines=["5-7"]  }
 package main
 
 import "fmt"
@@ -240,6 +240,8 @@ func main() {
     fmt.Println("Hello world!")
 }
 ```
+
+You can highlight some lines of code!
 
 ---
 
