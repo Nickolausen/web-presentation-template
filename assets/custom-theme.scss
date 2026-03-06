@@ -137,7 +137,7 @@ $linkColorHover: lighten($linkColor, 20%);
 	border-width: 0.3em;
 }
 
-.reveal .slide-background:after {
+.reveal .slide-background:not(:first-child):after {
 	content: "Author - Title - Venue Year";
 	position: absolute;
 	bottom: 2.5%;

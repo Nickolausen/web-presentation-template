@@ -10,10 +10,9 @@ aliases = [
 
 +++
 
-{{% today %}}
+Today's date! {{% today %}}
 # Short guide to Markdown slides
 ## This has much potential
-Next page
 
 ---
 
@@ -42,7 +41,7 @@ normal text
 
 ~~strikethrough~~
 
-[link](http://www.google.com)
+[link to google](http://www.google.com)
 
 ---
 
