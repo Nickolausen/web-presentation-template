@@ -45,6 +45,53 @@ normal text
 
 ---
 
+# Callouts
+
+{{% multicol %}}
+{{% col%}}
+{{% callout title="Tip" type="tip" %}}
+this must be a great tip
+{{% /callout %}}
+{{% /col %}}
+{{% col %}}
+{{% callout title="Note" type="note" %}}
+this is an information, or a note
+{{% /callout %}}
+{{% /col %}}
+{{% col %}}
+{{% callout title="Success" type="success" %}}
+Yay!
+{{% /callout %}}
+{{% /col %}}
+
+{{% col %}}
+{{% callout title="Danger!" type="danger" %}}
+something went possibly wrong :/
+{{% /callout %}}
+{{% /col %}}
+{{% col %}}
+{{% callout title="Warning!" type="warning" %}}
+just a warning
+{{% /callout %}}
+{{% /col %}}
+{{% /multicol %}}
+{{% multicol %}}
+{{% col %}}
+{{% callout title="A wise man once said" type="cite" 
+src="Confucio, ''lettere d'amore''" %}}
+skrr skrr blea blea
+{{% /callout %}}
+{{% /col %}}
+{{% col %}}
+{{% callout title="A wise man once said" type="cite" 
+src="Confucio, ''lettere d'amore'' (con link)" srcLink="www.google.com" %}}
+skrr skrr blea blea
+{{% /callout %}}
+{{% /col %}}
+{{% /multicol %}}
+
+---
+
 # Lists and enums
 
 1. First ordered list item

@@ -13,13 +13,14 @@
 
 // Sans-serif
 // @import url('https://fonts.googleapis.com/css2?family=Poppins');
-// @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* 
 	You may want a logo to be displayed 
 	on the bottom-left of the slides 
 */
-// $logo: url("../starthack.svg");
+$logo: url("../example-background.svg");
 
 $dark-theme: false !default;
 
@@ -28,12 +29,20 @@ $dark-theme: false !default;
 $backgroundColor: #fefefe;
 
 // Primary/body text
-$mainFont: 'Lato', sans-serif;
+$mainFont: 'Work Sans', sans-serif;
 $mainFontSize: 40px;
 $mainColor: #000000;
 $accentClr: #760000;
-$codeClr: rgb(144, 209, 21);
+$codeClr: $accentClr;
 $headingColor: #222;
+
+// Callouts styling
+$success: #28a745;
+$danger: #dc3545;
+$warning: #ffc107;
+$tip: #5a339e;
+$note: #17a2b8;
+$cite: gray;
 
 // Colors used for UI elements that are overlaid on top of
 // the presentation
@@ -53,7 +62,6 @@ $overlayElementFgColor: 0, 0, 0;
 	$codeClr: rgb(144, 209, 21);
 	$headingColor: white;
 
-	
 	// Colors used for UI elements that are overlaid on top of
 	// the presentation
 	$overlayElementBgColor: 240, 240, 240;
@@ -62,17 +70,17 @@ $overlayElementFgColor: 0, 0, 0;
 
 // Text selection
 $selectionBackgroundColor: #{$accentClr}77;
-$selectionColor: lighten( $backgroundColor, 10% );
+$selectionColor: lighten($backgroundColor, 10%);
 
 // Vertical spacing between blocks of text
-$blockMargin: 20px;
+$blockMargin: 10px;
 
 // Headings
-$headingMargin: 0 0 $blockMargin 0;
-$headingFont: 'Times New Roman';
-$headingLineHeight: 1.2;
+$headingMargin: 30px 0;
+$headingFont: 'Merriweather';
+$headingLineHeight: 1;
 $headingLetterSpacing: normal;
-$headingTextTransform: uppercase;
+// $headingTextTransform: uppercase;
 $headingTextShadow: none;
 $headingFontWeight: normal;
 $heading1TextShadow: $headingTextShadow;
@@ -81,13 +89,13 @@ $heading1Size: 3.77em;
 $heading2Size: 2.11em;
 $heading3Size: 1.55em;
 $heading4Size: 1.00em;
+$heading5Size: .80em;
 
 $codeFont: monospace;
 
 // Links and actions
 $linkColor: lighten($accentClr, 20%);
 $linkColorHover: lighten($linkColor, 20%);
-
 
 // Generates the presentation background, can be overridden
 // to return a background image or gradient
@@ -98,9 +106,14 @@ $linkColorHover: lighten($linkColor, 20%);
 @import "reveal-js/dist/theme/template/theme";
 
 // Override **some** bootstrap default values
+ol, ul {
+  padding-left: 0rem !important;
+}
+
 .reveal [class*="primary"] {
 	--bs-primary: #{$accentClr};
 	--bs-primary-bg: #{$accentClr};
+	--bs-primary-rgb: #{red($accentClr)}, #{green($accentClr)}, #{blue($accentClr)};
 
 	// Buttons variable
 	--bs-btn-bg: #{$accentClr};
@@ -122,14 +135,14 @@ $linkColorHover: lighten($linkColor, 20%);
 	color: $backgroundColor !important;
 }
 
-.reveal .slide-background {
+.reveal .slide-background:not(.stack) {
 	background-color: transparent;
 	// Uncomment to add bottom right logo in every slide
-	// background-image: $logo;
-	// background-repeat: no-repeat;
-	// background-position: 1.5% 97%;
-	// background-size: 7%;
-	// background-clip: border-box;
+	background-image: $logo;
+	background-repeat: no-repeat;
+	background-position: 1.5% 97%;
+	background-size: 15%;
+	background-clip: border-box;
 
 	// Uncomment to add slides border
 	border-style: solid;
@@ -137,14 +150,15 @@ $linkColorHover: lighten($linkColor, 20%);
 	border-width: 0.3em;
 }
 
-.reveal .slide-background:not(:first-child):after {
-	content: "Author - Title - Venue Year";
+.reveal .slide-background:not(:first-child, .stack):after {
+	content: "Title - Author - Date?";
 	position: absolute;
 	bottom: 2.5%;
 	right: 7%;
 	z-index: -1;
 	color: $accentClr;
 	font-size: .5em;
+	font-family: $mainFont;
 }
 
 .reveal strong,
