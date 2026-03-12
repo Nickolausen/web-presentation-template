@@ -363,9 +363,9 @@ vec2 grid(vec2 uv) {
 }
 
 vec3 getColor(vec2 uv, float d, float n) {  
-  vec3 fgColor = vec3(1, 1, 1); // Moon color
-  vec3 fgColor2 = vec3(0.50, 0.13, 0.57); // Particles color
-  vec3 bgColor = vec3(0.1, 0.1, 0.20); // Background color
+  vec3 fgColor = vec3(1, 0.50, 1); // Moon color
+  vec3 fgColor2 = vec3(0.6, 0, 0); // Particles color
+  vec3 bgColor = vec3(0, 0.1, 0.20); // Background color
   
   if (d < 0.1 && n < 0.1) {
     float mx = mod(uv.x, 0.04);
