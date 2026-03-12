@@ -6,21 +6,24 @@
 // Base settings for all themes that can optionally be
 // overridden by the super-theme
 
-// Fonts
+// Fonts - consider using https://www.fonttrio.xyz/ for less effort
+
+// Headings
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+// Body
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 // Monospace
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono');
 
-// Sans-serif
-// @import url('https://fonts.googleapis.com/css2?family=Poppins');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+$mainFont: 'Inter', sans-serif;
+$headingFont: 'Plus Jakarta Sans';
+$codeFont: 'JetBrains Mono';
 
 /* 
 	You may want a logo to be displayed 
 	on the bottom-left of the slides 
 */
-$logo: url("../example-background.svg");
+$logo: url("../imgs/logo-placeholder.png");
 
 $dark-theme: false !default;
 
@@ -28,13 +31,10 @@ $dark-theme: false !default;
 // Background of the presentation
 $backgroundColor: #fefefe;
 
-// Primary/body text
-$mainFont: 'Work Sans', sans-serif;
 $mainFontSize: 40px;
 $mainColor: #000000;
 $accentClr: #760000;
 $codeClr: $accentClr;
-$headingColor: #222;
 
 // Callouts styling
 $success: #28a745;
@@ -42,7 +42,7 @@ $danger: #dc3545;
 $warning: #ffc107;
 $tip: #5a339e;
 $note: #17a2b8;
-$cite: gray;
+$cite: rgb(134, 134, 134);
 
 // Colors used for UI elements that are overlaid on top of
 // the presentation
@@ -54,13 +54,9 @@ $overlayElementFgColor: 0, 0, 0;
 	// Background of the presentation
 	$backgroundColor: #000000;
 
-	// Primary/body text
-	$mainFont: 'Lato', sans-serif;
 	$mainFontSize: 40px;
 	$mainColor: white;
 	$accentClr: #760000;
-	$codeClr: rgb(144, 209, 21);
-	$headingColor: white;
 
 	// Colors used for UI elements that are overlaid on top of
 	// the presentation
@@ -70,28 +66,25 @@ $overlayElementFgColor: 0, 0, 0;
 
 // Text selection
 $selectionBackgroundColor: #{$accentClr}77;
-$selectionColor: lighten($backgroundColor, 10%);
+$selectionColor: invert($backgroundColor);
 
 // Vertical spacing between blocks of text
 $blockMargin: 10px;
 
 // Headings
 $headingMargin: 30px 0;
-$headingFont: 'Merriweather';
 $headingLineHeight: 1;
+$headingColor: $mainColor;
 $headingLetterSpacing: normal;
-// $headingTextTransform: uppercase;
+$headingTextTransform: normal;
 $headingTextShadow: none;
-$headingFontWeight: normal;
+$headingFontWeight: bold;
 $heading1TextShadow: $headingTextShadow;
 
 $heading1Size: 3.77em;
 $heading2Size: 2.11em;
 $heading3Size: 1.55em;
 $heading4Size: 1.00em;
-$heading5Size: .80em;
-
-$codeFont: monospace;
 
 // Links and actions
 $linkColor: lighten($accentClr, 20%);
@@ -104,6 +97,7 @@ $linkColorHover: lighten($linkColor, 20%);
 }
 
 @import "reveal-js/dist/theme/template/theme";
+@import "reveal-js/dist/theme/template/exposer";
 
 // Override **some** bootstrap default values
 ol, ul {
@@ -151,7 +145,7 @@ ol, ul {
 }
 
 .reveal .slide-background:not(:first-child, .stack):after {
-	content: "Title - Author - Date?";
+	content: "@Nickolausen";
 	position: absolute;
 	bottom: 2.5%;
 	right: 7%;
@@ -190,5 +184,5 @@ ol, ul {
 .reveal .code-wrapper {
 	border-radius: 10px;
 	padding: 7px;
-	box-shadow: 2.5px 2.5px 10px $mainColor;
+	box-shadow: 2.5px 2.5px 10px rgba($mainColor, .3);
 }

@@ -10,23 +10,50 @@ aliases = [
 
 +++
 
-Today's date! {{% today %}}
+{{% accentify "top-left" %}}
+Today's date! `{{% today %}}`
+{{% /accentify %}}
+
 # Short guide to Markdown slides
 ## This has much potential
 
 ---
+{{% section %}}
 
+# Typography
+
+{{% accentify %}}
+Slide down!
+{{% /accentify %}}
+
+$\downarrow$
+
+---
+
+{{% multicol %}}
+{{% col%}}
 # Headers
+{{% /col%}}
+{{% col%}}
 
 # H1
 ## H2
 ### H3
 #### H4
+##### H5
+###### H6
+
+{{% /col%}}
+{{% /multicol %}}
 
 ---
 
+{{% multicol %}}
+{{% col %}}
 # Text
+{{% /col %}}
 
+{{% col %}}
 normal text
 
 `inline code`
@@ -42,57 +69,17 @@ normal text
 ~~strikethrough~~
 
 [link to google](http://www.google.com)
-
----
-
-# Callouts
-
-{{% multicol %}}
-{{% col%}}
-{{% callout title="Tip" type="tip" %}}
-this must be a great tip
-{{% /callout %}}
-{{% /col %}}
-{{% col %}}
-{{% callout title="Note" type="note" %}}
-this is an information, or a note
-{{% /callout %}}
-{{% /col %}}
-{{% col %}}
-{{% callout title="Success" type="success" %}}
-Yay!
-{{% /callout %}}
 {{% /col %}}
 
-{{% col %}}
-{{% callout title="Danger!" type="danger" %}}
-something went possibly wrong :/
-{{% /callout %}}
-{{% /col %}}
-{{% col %}}
-{{% callout title="Warning!" type="warning" %}}
-just a warning
-{{% /callout %}}
-{{% /col %}}
-{{% /multicol %}}
-{{% multicol %}}
-{{% col %}}
-{{% callout title="A wise man once said" type="cite" 
-src="Confucio, ''lettere d'amore''" %}}
-skrr skrr blea blea
-{{% /callout %}}
-{{% /col %}}
-{{% col %}}
-{{% callout title="A wise man once said" type="cite" 
-src="Confucio, ''lettere d'amore'' (con link)" srcLink="www.google.com" %}}
-skrr skrr blea blea
-{{% /callout %}}
-{{% /col %}}
 {{% /multicol %}}
 
 ---
 
-# Lists and enums
+{{% multicol %}}
+{{% col %}}
+# Lists
+{{% /col %}}
+{{% col %}}
 
 1. First ordered list item
 1. Another item
@@ -105,11 +92,115 @@ skrr skrr blea blea
   1. Ordered sub-list
 1. And another item.
 
+{{% /col %}}
+{{% /multicol %}}
+
+{{% /section %}}
+
 ---
 
-# Inline images
+{{% section %}}
 
-![Alternative text](https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg)
+{{% accentify "top-right" %}}
+# UI Blocks
+{{% /accentify %}}
+
+Slide down!
+
+$\downarrow$
+
+---
+
+{{% multicol %}}
+{{% col %}}
+# Callouts
+
+{{% callout title="A wise man once said" type="cite" 
+src="Confucio, ''lettere d'amore''" %}}
+skrr skrr blea blea
+{{% /callout %}}
+
+{{% callout title="A wise man once said" type="cite" 
+src="Confucio, ''lettere d'amore'' (con link)" srcLink="www.google.com" %}}
+skrr skrr blea blea
+{{% /callout %}}
+
+{{% /col %}}
+
+{{% col%}}
+{{% callout title="Tip" type="tip" %}}
+this must be a great tip
+{{% /callout %}}
+
+{{% callout title="Note" type="note" %}}
+this is an information, or a note
+{{% /callout %}}
+
+{{% callout title="Success" type="success" %}}
+Yay!
+{{% /callout %}}
+
+{{% callout title="Danger!" type="danger" %}}
+something went possibly wrong :/
+{{% /callout %}}
+
+{{% callout title="Warning!" type="warning" %}}
+just a warning
+{{% /callout %}}
+
+{{% /col %}}
+{{% /multicol %}}
+
+---
+
+# Code Blocks
+pt#01
+
+## inline
+
+You can play around with this `code` or `pwd`
+
+---
+
+{{% multicol %}}
+
+# Code Blocks
+pt#02
+
+{{% col %}}
+## inside code blocks
+
+```java { linenos=inline hl_lines=["4-6"] }
+import System;
+
+class Program {
+  public static void main(string[] args) {
+    System.out.println("Hello, World!");
+  }
+}
+```
+
+{{% callout type="tip" %}}
+You can even highlight some lines of code!
+{{% /callout %}}
+
+{{% /col %}}
+
+{{% /multicol %}}
+
+---
+
+{{% code path="static/files/code.cpp"  %}}
+## from file
+
+{{% /section %}}
+
+---
+
+
+![Alternative text](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.mos.cms.futurecdn.net%2FCcD2hbxVtfyvg5Q923eebM.jpg&f=1&nofb=1&ipt=8478f0cb985c8f3a744229931c01e03eca07c37df471f14807cfd2f817c67faa)
+
+#### Inline images
 
 ---
 
@@ -119,8 +210,6 @@ Autoresize specifying
 
 * `max-w` (percent of parent element width) and/or `max-h` (percent of viewport height) as max sizes , and
 * `width` and/or `height` as *exact* sizes (as percent of viewport size)
-
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" height="20">}}
 
 ---
 

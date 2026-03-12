@@ -1,11 +1,14 @@
 {{- $here := $.Page.File | path.Dir -}}
-{{ $path := .Get "path" | default "README.md" | printf "%s/%s" ($here) -}}
-{{- $content := safeHTML (readFile $path) -}}
-{{- $content := split $content "\n" -}}
-{{- $start := .Get "from" | default "1" | int | add -1 }}
-{{- $end := .Get "to" | default (len $content) | int }}
-{{- $end := sub $end $start }}
-{{- $content := after $start (first (add $start $end) $content) -}}
+{{- $path := .Get "path" | default "config.toml" | printf "%s/%s" ($here) -}}
+{{- $fileContent := readFile $path -}}
+{{- $lines := split $fileContent "\n" -}}
+
+{{/* Range Logic */}}
+{{- $start := .Get "from" | default "1" | int | add -1 -}}
+{{- $to := .Get "to" | default (len $lines) | int -}}
+{{- $content := after $start $lines | first (sub $to $start) -}}
+
+{{/* Language Detection */}}
 {{- $highlight := .Get "highlight" | default "true" -}}
 {{- if eq $highlight "true" }}
     {{- $language := .Get "language" | default (
@@ -18,11 +21,13 @@
         )
     ) }}
 
+<div class="custom-code-wrapper"></div>
+
 ```{{- $language }} { linenos=inline }
-{{- range $index, $element := $content }}
-{{ $element | safeHTML }}
-{{- end -}}{{- "\n" -}}
+{{- range $content }}
+{{ . | safeHTML }}
+{{- end }}
 ```
-{{ else -}}
-{{- $content -}}
+{{- else }}
+{{ range $content }}{{ . | safeHTML }}{{ end }}
 {{- end -}}
