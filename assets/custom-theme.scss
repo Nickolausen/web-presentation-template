@@ -139,9 +139,9 @@ ol, ul {
 	background-clip: border-box;
 
 	// Uncomment to add slides border
-	border-style: solid;
-	border-color: $accentClr;
-	border-width: 0.3em;
+	// border-style: solid;
+	// border-color: $accentClr;
+	// border-width: 0.3em;
 }
 
 .reveal .slide-background:not(:first-child, .stack):after {
@@ -177,7 +177,7 @@ ol, ul {
 
 .reveal code:not(.nohighlight) {
 	color: $codeClr;
-	font-family: "JetBrains Mono", "Oxygen Mono", "Roboto Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
+	font-family: $codeFont;
 	font-weight: bold;
 }
 

@@ -167,8 +167,8 @@ You can play around with this `code` or `pwd`
 # Code Blocks
 pt#02
 
-{{% col %}}
 ## inside code blocks
+{{% col %}}
 
 ```java { linenos=inline hl_lines=["4-6"] }
 import System;
@@ -179,14 +179,16 @@ class Program {
   }
 }
 ```
+{{% /col %}}
 
-{{% callout type="tip" %}}
+{{% col %}}
+{{% callout type="note" %}}
 You can even highlight some lines of code!
 {{% /callout %}}
-
 {{% /col %}}
 
 {{% /multicol %}}
+
 
 ---
 
@@ -213,23 +215,38 @@ Autoresize specifying
 
 ---
 
-## Multi-column slide
+{{% section %}}
+{{< slide background-iframe="animations/8bitmoon.html" background-interactive=false >}}
 
-{{% multicol %}}{{% col %}}
-Column 1
-{{% /col %}}{{% col %}}
-Column 2
-{{% /col %}}{{% /multicol %}}
+## **With background!**
 
-{{% multicol %}}
-{{% col class="col-8" %}}
-Larger columns using bootstrap
-{{% /col %}}
-{{% col %}}
-[Link to bootstrap grid system](https://getbootstrap.com/docs/4.0/layout/grid/)
-{{% /col %}}
-{{% /multicol %}}
+Explore the `static/animations` folder to find out more!
 
+---
+
+{{< slide background-iframe="animations/hexagons.html" background-interactive=false >}}
+
+## **Hexagons everywhere**
+
+---
+
+{{< slide background-iframe="animations/melting-lines.html" background-interactive=false >}}
+
+## **Melting lines**
+
+---
+
+{{< slide background-iframe="animations/ribbons.html" background-interactive=false >}}
+
+## **Ribbons**
+
+---
+
+{{< slide background-iframe="animations/particles.html" background-interactive=false >}}
+
+## **Particles**
+
+{{% /section %}}
 
 ---
 
