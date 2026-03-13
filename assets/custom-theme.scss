@@ -186,3 +186,16 @@ ol, ul {
 	padding: 7px;
 	box-shadow: 2.5px 2.5px 10px rgba($mainColor, .3);
 }
+
+.reveal blockquote {
+	background-color: rgba($color: $accentClr, $alpha: .2);
+	border-radius: 20px;
+	border: 2px solid $accentClr;
+	box-shadow: 5px 5px 0px $accentClr;
+	transition: all 0.3s ease;
+}
+
+.reveal blockquote:hover {
+	// transition: all;
+	box-shadow: 0px 0px 20px $accentClr;
+}

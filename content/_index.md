@@ -121,7 +121,7 @@ skrr skrr blea blea
 {{% /callout %}}
 
 {{% callout title="A wise man once said" type="cite" 
-src="Confucio, ''lettere d'amore'' (con link)" srcLink="www.google.com" %}}
+src="Confucio, ''lettere d'amore'' (con link)" srcLink="https://www.google.com" %}}
 skrr skrr blea blea
 {{% /callout %}}
 
@@ -367,17 +367,42 @@ Explore the `static/animations` folder to find out more!
 
 ---
 
+{{% multicol %}}
+{{% col %}}
+{{% accentify "top-right" %}}
 # $$\LaTeX{}$$
+{{% /accentify %}}
+{{% /col %}}
 
+{{% col %}}
 
-Inline equations like $E=mc^2$
+$\textbf{Exercise}$ 
 
-$$\frac{n!}{k!(n-k)!} = \binom{n}{k}$$
+Prove that $a_n = \frac{2n + 1}{n + 2} \xrightarrow[n \to +\infty]{} 2$.
+
+$\textbf{Proof}$ 
+
+Given $\varepsilon > 0,\ \exists m_\varepsilon \in \mathbb{N}:$
+<div>
+\begin{equation}
+    \begin{split}
+        \left\lvert a_n - l \right\rvert &= \left\lvert \frac{2n + 1}{n + 2} - 2 \right\rvert \leq \varepsilon, \qquad \forall n \in \mathbb{N} \\
+        &= \left\lvert \frac{2n + 1 -2n - 4}{n + 2} \right\rvert \leq \varepsilon \\ 
+        &\Longleftrightarrow \frac{3}{n + 2} \leq \varepsilon \\
+        &\Longleftrightarrow n + 2 \geq \frac{3}{\varepsilon} \\
+        &\Longleftrightarrow n \geq \frac{3}{\varepsilon} - 2
+    \end{split}
+\end{equation}
+</div>
+
+I can choose $m_\varepsilon = \left[\frac{3}{\varepsilon} - 2\right] + 1$ in order to satisfy the limit. $\\#$
+{{% /col %}}
+{{% /multicol %}}
+
 
 ---
 
 # Code snippets
-
 
 ```kotlin { linenos=inline }
 val x = pippo
